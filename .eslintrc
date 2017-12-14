@@ -1,0 +1,19 @@
+{
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "root": true,
+  "globals": {
+    "browser": true,
+    "by": true,
+    "describe": true,
+    "element": true,
+    "expect": true,
+    "it": true,
+    "jasmine": true,
+    "protractor": true,
+    "beforeEach": true,
+    "afterEach": true,
+    "beforeAll": true,
+    "afterAll": true,
+  }
+}
