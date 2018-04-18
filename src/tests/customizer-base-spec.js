@@ -17,7 +17,7 @@ const customizations = {
   },
   profiles: {
     path: 'profiles/html/profileView.do?userid=',
-    cssPath: 'files/customizer/samples/profiles/profilesCustomization.css',
+    cssPath: 'files/customizer/profiles/profilesCustomization.css',
   },
 };
 
@@ -52,8 +52,9 @@ describe('IBM Connections Cloud Integration Test Environment', () => {
   });
 
   it('loads helloWorld customization', () => {
+    // Sample: https://github.com/ibmcnxdev/customizer/tree/master/samples/helloWorld
     browser.waitForAngularEnabled(false);
-    browser.get(`${connCloud.url}${customizations.homepage.path}`);
+    browser.get(`${connCloud.url}${customizations.helloworld.path}`);
 
     // Verify page is loaded
     const lotusMain = element(by.id('lotusMain'));
@@ -65,6 +66,7 @@ describe('IBM Connections Cloud Integration Test Environment', () => {
   });
 
   it('loads profiles customization', () => {
+    // Sample: https://github.com/ibmcnxdev/customizer/tree/master/samples/profiles
     browser.waitForAngularEnabled(false);
     browser.get(`${connCloud.url}${customizations.profiles.path}${connCloud.user.userid}`);
 
@@ -72,9 +74,8 @@ describe('IBM Connections Cloud Integration Test Environment', () => {
     const lotusMain = element(by.id('lotusMain'));
     browser.wait(condition.presenceOf(lotusMain, 10000));
 
-    // Verify profilesCustomization.css is added to head tag
-    const headTag = element(by.tagName('head'));
-    const children = headTag.all(by.tagName('link'));
+    // Verify profilesCustomization.css is added to page
+    const children = element.all(by.tagName('link'));
     const hrefList = [];
     children.each((child) => {
       child.getAttribute('href').then((value) => {
@@ -82,7 +83,13 @@ describe('IBM Connections Cloud Integration Test Environment', () => {
       });
     }).then(() => {
       const profileCSSUrl = `${connCloud.url}${customizations.profiles.cssPath}`;
-      expect(hrefList.includes(profileCSSUrl)).toEqual(true);
+      let isContainsProfileCSS = false;
+      hrefList.forEach((href) => {
+        if (href.indexOf(profileCSSUrl) > -1) {
+          isContainsProfileCSS = true;
+        }
+      });
+      expect(isContainsProfileCSS).toEqual(true);
     });
 
     // Verify custom styling of profile photo is applied
