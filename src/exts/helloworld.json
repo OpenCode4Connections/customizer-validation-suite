@@ -1,0 +1,23 @@
+{
+  "name": "Hello World E2E Homepage Customization",
+  "title": "Hello World E2E Homepage Customization",
+  "description": "Hello World E2E Homepage Customization",
+  "extensions": [
+    {
+      "name": "Hello World E2E Extension",
+      "type": "com.ibm.customizer.ui",
+      "payload": {
+        "include-files": [
+          "helloWorld/helloWorld.user.js"
+        ],
+        "include-repo": {
+          "name":"global-samples"
+        }
+      },
+      "path": "homepage"
+    }
+  ],
+  "services": [
+    "Customizer"
+  ]
+}

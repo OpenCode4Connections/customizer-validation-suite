@@ -1,0 +1,23 @@
+#{
+  "extensions": [
+    {
+      "payload": {
+        "include-files": [
+          "newsRiver/newsRiverSectioned.user.js"
+        ],
+        "include-repo": {
+          "name": "global-samples"
+        }
+      },
+      "name": "News River Sectioned Extension",
+      "type": "com.ibm.customizer.ui",
+      "path": "homepage"
+    }
+  ],
+  "name": "News River Sectioned Sample",
+  "description": "News River Sectioned Sample",
+  "services": [
+    "Customizer"
+  ],
+  "title": "News River Sectioned Sample"
+}
