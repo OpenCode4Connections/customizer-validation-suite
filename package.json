@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Test framework and samples for IBM Connections Customizer",
   "scripts": {
-    "test": "protractor conf-local.js",
+    "test": "cross-env TESTENV=PROD_NA protractor conf-local.js",
     "webdriver-update": "webdriver-manager update",
     "webdriver-start": "webdriver-manager start",
     "clean": "npm prune && npm install && npm update",
@@ -17,6 +17,7 @@
     "babel": "^6.23.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^6.1.0",
+    "cross-env": "^4.0.0",
     "eslint": "^3.11.1",
     "eslint-config-airbnb": "^13.0.0",
     "eslint-config-airbnb-base": "^10.0.1",
