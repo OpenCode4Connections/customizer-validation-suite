@@ -9,8 +9,8 @@ This project is designed to provide a framework and sample code for running auto
 2. Make sure you have node and npm installed
 3. Switch to top level directory
 4. `npm install`
-5. `webdriver-manager update`
-6. `webdriver-manager start`
+5. `webdriver-manager update` or `npm run webdriver-update`
+6. `webdriver-manager start` or `npm run webdriver-start`
 7. Open one of the spec files and insert desired env and login details
 8. `npm run test`
 

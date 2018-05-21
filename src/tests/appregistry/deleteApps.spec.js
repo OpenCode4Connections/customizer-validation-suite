@@ -35,6 +35,7 @@ describe('Delete App Registry App', () => {
     const appDropdown = AppRegistry.openAppActionsMenuButton(app);
     appDropdown.click();
     const appDropdownDeleteButton = AppRegistry.appDropdownDeleteButton(app);
+    expect(browser.wait(condition.visibilityOf(appDropdownDeleteButton, TIMEOUT)));
     appDropdownDeleteButton.click();
     appregistry.deleteApp(app, helloName);
 
@@ -50,6 +51,7 @@ describe('Delete App Registry App', () => {
     const appDropdown = AppRegistry.openAppActionsMenuButton(app);
     appDropdown.click();
     const appDropdownDeleteButton = AppRegistry.appDropdownDeleteButton(app);
+    expect(browser.wait(condition.visibilityOf(appDropdownDeleteButton, TIMEOUT)));
     appDropdownDeleteButton.click();
     appregistry.deleteApp(app, profilesName);
 
