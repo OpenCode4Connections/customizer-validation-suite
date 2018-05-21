@@ -4,7 +4,8 @@
   "description": "Test framework and samples for IBM Connections Customizer",
   "scripts": {
     "test": "protractor conf-local.js",
-    "update-webdriver": "webdriver-manager udpate",
+    "webdriver-update": "webdriver-manager update",
+    "webdriver-start": "webdriver-manager start",
     "clean": "npm prune && npm install && npm update",
     "lint": "eslint --ext .js ./ | tee lint_report.txt"
   },
